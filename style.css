@@ -1,0 +1,387 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  cursor: url(./img/cursor.png), auto;
+  overflow-x: hidden;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  font-size: 30px;
+  width: 100%;
+  height: 10vh;
+}
+
+nav .menu-container {
+  display: flex;
+  flex-direction: row;
+  border: solid 3px black;
+  width: 85%;
+}
+
+nav .menuside-container {
+  border: solid 3px black;
+  width: 15%;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav .menu-container a {
+  text-decoration: none;
+  color: black;
+  margin: auto;
+  position: relative;
+}
+
+nav #logo {
+  font-weight: 800;
+  font-size: 40px;
+}
+
+nav .menuside-container img {
+  height: 80%;
+  width: auto;
+  margin: auto;
+}
+
+header .name {
+  background-image: url(https://wallpapercave.com/wp/wp7600141.jpg);
+  height: 40vh;
+  border: solid 3px black;
+  color: white;
+  font-size: 250px;
+  display: flex;
+  justify-content: center;
+}
+
+header .name p {
+  animation: moving 7s infinite;
+}
+
+@keyframes moving {
+  0% {
+    transform: translateX(1400px);
+  }
+  25% {
+    transform: translateX(800px);
+  }
+  50% {
+    transform: translateX(0px);
+  }
+  75% {
+    transform: translateX(-800px);
+  }
+  100% {
+    transform: translateX(-1400px);
+  }
+}
+
+/* spider */
+.spider {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  left: 30%;
+
+  /* 4. Animatie */
+  animation: swing 2s infinite;
+  transform-origin: top;
+
+  /* Bonus */
+  transition: 1s ease-in-out;
+}
+
+.spider .spiderweb {
+  width: 2px;
+  height: 200px;
+  margin-left: 49px;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.spider .body {
+  width: 100px;
+  height: 80px;
+  background: #000;
+  position: relative;
+  border-radius: 50%;
+}
+
+.spider .body .eye {
+  width: 33px;
+  height: 33px;
+  position: absolute;
+  bottom: 20px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.spider .body .eye.left {
+  left: 15px;
+}
+
+.spider .body .eye.right {
+  right: 15px;
+}
+
+.spider .body .eye:after {
+  background: #000;
+  width: 7px;
+  height: 7px;
+  content: "";
+  display: block;
+  margin: 55%;
+  border-radius: 50%;
+
+  /* 3. Animatie */
+  animation: look 8s infinite;
+}
+
+.spider .legs .leg {
+  width: 80px;
+  height: 40px;
+  margin-top: -20px;
+  border: 5px solid transparent;
+  border-top-color: #000;
+  border-radius: 40px 40px 0 0;
+}
+
+.spider .legs {
+  position: absolute;
+  bottom: -10%;
+  z-index: -1;
+}
+
+.spider .legs.left {
+  left: -70%;
+}
+.spider .legs.right {
+  right: -60%;
+}
+
+.legs.left .leg:nth-child(1) {
+  transform: rotate(10deg);
+  margin-left: 10px;
+}
+.legs.right .leg:nth-child(1) {
+  transform: rotate(-10deg);
+  margin-left: -10px;
+}
+
+.legs.left .leg:nth-child(2) {
+  transform: rotate(-20deg);
+  margin-left: 20px;
+}
+.legs.right .leg:nth-child(2) {
+  transform: rotate(20deg);
+  margin-left: -20px;
+}
+
+.legs.left .leg:nth-child(3) {
+  transform: rotate(-50deg);
+  margin-left: 30px;
+}
+.legs.right .leg:nth-child(3) {
+  transform: rotate(50deg);
+  margin-left: -30px;
+}
+
+/* 1. Animatie */
+@keyframes look {
+  0%,
+  40%,
+  100% {
+    transform: translateX(0);
+  }
+
+  45%,
+  95% {
+    transform: translateX(-110%);
+  }
+}
+
+/* 3. Animatie */
+@keyframes swing {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Active page */
+#active {
+  position: absolute;
+  width: 8vh;
+  animation: around 5s infinite;
+  top: -20px;
+  right: 0;
+}
+
+@keyframes around {
+  0% {
+    top: -20px;
+    left: -40px;
+    transform: rotate(-0.15turn);
+  }
+  10% {
+    top: -20px;
+    left: 0px;
+  }
+  20% {
+    top: -20px;
+    left: 40px;
+  }
+  30% {
+    top: -20px;
+    right: 0px;
+    transform: rotate(0.25turn);
+  }
+  40% {
+    bottom: 0px;
+    right: -40px;
+  }
+  50% {
+    bottom: -20px;
+    left: -40px;
+  }
+  60% {
+    bottom: -20px;
+    left: 0px;
+    transform: rotate(0.25turn);
+  }
+  70% {
+    bottom: -20px;
+    left: 50px;
+  }
+  80% {
+    bottom: -20px;
+    left: 0px;
+  }
+  90% {
+    top: 0px;
+    left: -40px;
+  }
+  100% {
+    top: -20px;
+    left: -40px;
+  }
+}
+
+#active-page {
+  color: #000;
+  font-size: 45px;
+  font-weight: bold;
+  animation: colorchange 1s infinite alternate;
+}
+
+@keyframes colorchange {
+  0% {
+    color: purple;
+  }
+  40% {
+    color: #000;
+  }
+  45% {
+    color: white;
+  }
+}
+
+/* category */
+.category {
+  width: 100%;
+  border: solid 3px black;
+  height: 30vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  position: relative;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
+.category::-webkit-scrollbar {
+    display: none;
+}
+
+.typeCandy {
+  height: 90%;
+  width: auto;
+  border-radius: 50%;
+  border: solid 3px black;
+  padding: 15px;
+  margin: auto;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.typeCandy:nth-child(even) {
+  background-color: #ff9100;
+}
+
+.typeCandy:nth-child(odd) {
+  background-color: #9d4edd;
+}
+
+.typeCandy img {
+  height: 100%;
+  margin: auto;
+}
+
+.category .decoration {
+  position: absolute;
+  width: 5%;
+  height: 25%;
+}
+
+.category .decoration:nth-child(1) {
+  animation: moveAround 20s linear 0.5s infinite;
+}
+
+.category .decoration:nth-child(2) {
+  animation: moveAround 20s linear 1s infinite;
+}
+
+.category .decoration:nth-child(3) {
+  animation: moveAround 20s linear 1.5s infinite;
+}
+
+.category .decoration:nth-child(4) {
+  animation: moveAround 20s linear 2s infinite;
+}
+
+@keyframes moveAround {
+  0% {
+    top: 0;
+    left: 0;
+  }
+  35% {
+    top: 0;
+    left: 95%;
+  }
+  50% {
+    top: 75%;
+    left: 95%;
+  }
+  80% {
+    top: 75%;
+    left: 0px;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+  }
+}
