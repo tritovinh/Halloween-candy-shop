@@ -18,8 +18,8 @@ header {
 nav {
   display: flex;
   justify-content: space-between;
-  font-size: 30px;
   width: 100%;
+  font-size: 30px;  
   height: 10vh;
 }
 
@@ -55,7 +55,7 @@ nav .menuside-container img {
   margin: auto;
 }
 
-header .name {
+.name {
   background-image: url(https://wallpapercave.com/wp/wp7600141.jpg);
   height: 40vh;
   border: solid 3px black;
@@ -65,7 +65,7 @@ header .name {
   justify-content: center;
 }
 
-header .name p {
+.name p {
   animation: moving 7s infinite;
 }
 
@@ -314,7 +314,7 @@ header .name p {
 }
 
 .category::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .typeCandy {
@@ -360,7 +360,7 @@ header .name p {
 }
 
 .category .decoration:nth-child(4) {
-  animation: moveAround 20s linear 2s infinite;
+  animation: moveAround 20s linear 2.5s infinite;
 }
 
 @keyframes moveAround {
